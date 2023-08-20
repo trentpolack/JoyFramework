@@ -29,19 +29,12 @@ public class JoyFramework : ModuleRules
 				"GameplayTasks",
 				"GameplayAbilities",
 				"EnhancedInput",
-				"AIModule",
-				"Chaos"
+				"AIModule"
 			}
 		);
 
 		DynamicallyLoadedModuleNames.AddRange(
 			new string[] {
-				"Slate",
-				"SlateCore",
-				"RenderCore",
-				"DeveloperSettings",
-				"RHI",
-				"UMG"
 			}
 		);
 	}
