@@ -5,8 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 
-#include "InputActionValue.h"
-
 #include "AbilitySystemInterface.h"
 
 #include "JNCharacter.generated.h"

@@ -4,11 +4,7 @@
 
 #include "CoreMinimal.h"
 
-#include "InputActionValue.h"
-
 #include "JNPlayerCharacterBase.h"
-
-#include "System/JNGameplayTags.h"
 
 #include "JNPlayerCharacter1P.generated.h"
 
@@ -51,15 +47,6 @@ protected:
 	 */
 	virtual void BeginPlay( ) override;
 	virtual void EndPlay( const EEndPlayReason::Type EndPlayReason ) override;
-
-	/**
-	 *	AJNPlayerCharacterBase Overrides.
-	*/
-
-	// Methods for movement and look inputs.
-	virtual void OnMoveAction( const FInputActionValue& Value ) override;
-	virtual void OnLookAction_Mouse( const FInputActionValue& Value ) override;
-	virtual void OnLookAction_Stick( const FInputActionValue& Value ) override;
 
 public:
 	/**

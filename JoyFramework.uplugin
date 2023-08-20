@@ -18,13 +18,17 @@
 		{
 			"Name": "JoyFramework",
 			"Type": "Runtime",
-			"LoadingPhase": "PreDefault"
+			"LoadingPhase": "Default"
 		}
 	],
 	"Plugins": [
 		{
-			"Name": "EnhancedInput",
+			"Name": "GameplayAbilities",
 			"Enabled": true
+		},
+		{
+			"Name": "EnhancedInput",
+			"Enabled":  true
 		}
 	]
 }

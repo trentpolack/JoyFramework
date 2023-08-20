@@ -8,12 +8,6 @@
 
 #include "GameFramework/SpringArmComponent.h"
 
-#include "EnhancedInputComponent.h"
-#include "EnhancedInputSubsystems.h"
-
-#include "System/Input/JNInputComponent.h"
-#include "System/Input/JNInputConfig.h"
-
 #include "Character/Player/JNPlayerCharacterMovementComponent.h"
 
 /**
@@ -57,80 +51,6 @@ void AJNPlayerCharacter3P::BeginPlay( )
 void AJNPlayerCharacter3P::EndPlay( const EEndPlayReason::Type EndPlayReason )
 {
 	Super::EndPlay( EndPlayReason );
-}
-
-void AJNPlayerCharacter3P::OnMoveAction( const FInputActionValue& Value )
-{
-	// Input is a Vector2D
-	FVector2D movementVector = Value.Get< FVector2D >( );
-
-	if( !IsValid( Controller ) )
-	{
-		// No valid controller.
-		return;
-	}
-
-	// find out which way is forward
-	const FRotator Rotation = Controller->GetControlRotation();
-	const FRotator YawRotation(0, Rotation.Yaw, 0);
-
-	// get forward vector
-	const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
-	
-	// get right vector 
-	const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
-
-	// add movement 
-	AddMovementInput(ForwardDirection, movementVector.Y);
-	AddMovementInput(RightDirection, movementVector.X);
-}
-
-void AJNPlayerCharacter3P::OnLookAction_Mouse( const FInputActionValue& Value )
-{
-	// input is a Vector2D
-	FVector2D lookAxisVector = Value.Get< FVector2D >( );
-
-	if( !IsValid( Controller ) )
-	{
-		// No valid controller.
-		return;
-	}
-
-	if( lookAxisVector.X != 0.0f )
-	{
-		AddControllerYawInput( lookAxisVector.X );
-	}
-
-	if( lookAxisVector.Y != 0.0f )
-	{
-		AddControllerPitchInput( lookAxisVector.Y );
-	}
-}
-
-void AJNPlayerCharacter3P::OnLookAction_Stick( const FInputActionValue& Value )
-{
-	// input is a Vector2D
-	FVector2D lookAxisVector = Value.Get< FVector2D >( );
-
-	if( !IsValid( Controller ) )
-	{
-		// No valid controller.
-		return;
-	}
-
-	// Grab the world context.
-	const UWorld* pWorld = GetWorld( );
-	check( pWorld );
-
-	if( lookAxisVector.X != 0.0f )
-	{
-		AddControllerYawInput( lookAxisVector.X * kStickLookYawRate * pWorld->GetDeltaSeconds( ) );
-	}
-
-	if( lookAxisVector.Y != 0.0f )
-	{
-		AddControllerPitchInput( lookAxisVector.Y * kStickLookPitchRate * pWorld->GetDeltaSeconds( ) );
-	}
 }
 
 void AJNPlayerCharacter3P::Reset( )
