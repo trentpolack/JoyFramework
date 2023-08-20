@@ -2,7 +2,7 @@
 
 #include "System/Input/JNInputConfig.h"
 
-#include "JNLogging.h"
+#include "System/JNLogging.h"
 
 /**
  *	UJNInputConfig Class Definition.

@@ -11,7 +11,7 @@
 
 #include "GameplayTagsManager.h"
 
-#include "JNLogging.h"
+#include "System/JNLogging.h"
 
 // Static Definitions.
 FJNGameplayTags FJNGameplayTags::GameplayTags;

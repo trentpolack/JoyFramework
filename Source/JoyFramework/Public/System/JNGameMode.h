@@ -7,8 +7,8 @@
 
 #include "JNGameMode.generated.h"
 
-UCLASS( MinimalAPI )
-class AJNGameMode : public AGameModeBase
+UCLASS( )
+class JOYFRAMEWORK_API AJNGameMode : public AGameModeBase
 {
 	GENERATED_BODY( )
 

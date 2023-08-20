@@ -9,7 +9,7 @@
 
 #include "System/JNGameplayTags.h"
 
-#include "JNLogging.h"
+#include "System/JNLogging.h"
 
 /**
  *	UJNAssetManager Class Definition.

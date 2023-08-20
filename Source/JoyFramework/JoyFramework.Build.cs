@@ -28,7 +28,7 @@ public class JoyFramework : ModuleRules
 				"GameplayTags",
 				"GameplayTasks",
 				"GameplayAbilities",
-				"AIModule",             
+				"AIModule",
 				"Chaos",
 				"InputCore",
 				"EnhancedInput"
