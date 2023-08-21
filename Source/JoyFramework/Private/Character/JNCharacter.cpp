@@ -57,7 +57,7 @@ void AJNCharacter::BeginPlay( )
 {
 	Super::BeginPlay( );
 
-	// Reset the player to handle some initialization logic.
+	// Reset the character to handle some initialization logic.
 	Reset( );
 }
 
@@ -73,22 +73,4 @@ void AJNCharacter::Reset( )
 		// Initialize the ability system component.
 		AbilitySystemComponent->InitAbilityActorInfo( this, this );
 	}
-
-	// Initialize core attributes.
-/*
-	if (PlayerAttributes != nullptr)
-	{
-		FGameplayEffectContextHandle EffectContext = AbilitySystemComponent->MakeEffectContext();
-		EffectContext.AddSourceObject(this);
- 
-		for (const TSubclassOf<UGameplayEffect> GameplayEffect : StartupEffects)
-		{
-			FGameplayEffectSpecHandle NewHandle = AbilitySystemComponent->MakeOutgoingSpec( GameplayEffect, PlayerAttributes->GetLevel( ), EffectContext );
-			if (NewHandle.IsValid())
-			{
-				AbilitySystemComponent->ApplyGameplayEffectSpecToTarget(*NewHandle.Data.Get(), AbilitySystemComponent);
-			}
-		}
-	}
-*/
 }
