@@ -1,5 +1,3 @@
-// Copyright 2023 Trent Polack. All Rights Reserved. 
-
 #include "Inventory/JNItemInstance.h"
 
 #include "GameFramework/Pawn.h"

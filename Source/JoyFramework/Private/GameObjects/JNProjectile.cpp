@@ -1,5 +1,3 @@
-// Copyright 2023 Trent Polack. All Rights Reserved. 
-
 #include "GameObjects/JNProjectile.h"
 
 #include "GameFramework/ProjectileMovementComponent.h"

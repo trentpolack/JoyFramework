@@ -1,5 +1,3 @@
-// Copyright 2023 Trent Polack. All Rights Reserved. 
-
 #include "Camera/JNPlayerCameraManager.h"
 
 #include "GameFramework/ProjectileMovementComponent.h"

@@ -1,5 +1,3 @@
-// Copyright 2023 Trent Polack. All Rights Reserved. 
-
 using UnrealBuildTool;
 
 public class JoyFramework : ModuleRules

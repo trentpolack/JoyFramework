@@ -1,5 +1,3 @@
-// Copyright 2023 Trent Polack. All Rights Reserved. 
-
 #pragma once
 
 #include "Containers/Array.h"
@@ -27,10 +25,6 @@ public:
 	UJNInputComponent( const FObjectInitializer& ObjectInitializer );
 
 public:
-	// TODO (trent, 3/5/23): Figure out if these are needed.
-//	void AddInputMappings( const UJNInputConfig* InputConfig, UEnhancedInputLocalPlayerSubsystem* InputSubsystem ) const;
-//	void RemoveInputMappings( const UJNInputConfig* InputConfig, UEnhancedInputLocalPlayerSubsystem* InputSubsystem ) const;
-
 	template< class UserClass, typename FuncType >
 	void BindNativeAction( const UJNInputConfig* InputConfig, const FGameplayTag& InputTag, ETriggerEvent TriggerEvent, UserClass* Object, FuncType Func, bool bLogIfNotFound );
 

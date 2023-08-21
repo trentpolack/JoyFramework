@@ -1,5 +1,3 @@
-#include "GameObjects/JNPickupComponent.h"
-
 UJNPickupComponent::UJNPickupComponent( )
 {
 	// Setup the Sphere Collision
