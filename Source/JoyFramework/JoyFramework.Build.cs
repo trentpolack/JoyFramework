@@ -25,11 +25,12 @@ public class JoyFramework : ModuleRules
 				"CoreUObject",
 				"Engine",
 				"PhysicsCore",
+				"AIModule",
 				"GameplayTags",
 				"GameplayTasks",
 				"GameplayAbilities",
 				"EnhancedInput",
-				"AIModule"
+				"CommonUI"
 			}
 		);
 
