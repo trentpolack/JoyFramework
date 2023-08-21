@@ -28,7 +28,11 @@
 		},
 		{
 			"Name": "EnhancedInput",
-			"Enabled":  true
+			"Enabled": true
+		},
+		{
+			"Name": "CommonUI",
+			"Enabled": true
 		}
 	]
 }
