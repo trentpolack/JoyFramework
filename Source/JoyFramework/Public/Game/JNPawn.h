@@ -30,12 +30,6 @@ protected:
 	UPROPERTY( )
 	TObjectPtr< UJNAbilitySystemComponent > AbilitySystemComponent = nullptr;
 
-	/**
-	 *	Inventory Properties.
-	 */
-	UPROPERTY( Transient )
-	TObjectPtr< UJNInventoryComponent > Inventory = nullptr;
-
 protected:
 	virtual void BeginPlay( );
 

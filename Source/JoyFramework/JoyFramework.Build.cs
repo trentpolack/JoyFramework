@@ -34,6 +34,11 @@ public class JoyFramework : ModuleRules
 			}
 		);
 
+		PrivateDependencyModuleNames.AddRange(
+			new string[] {
+			}
+		);
+
 		DynamicallyLoadedModuleNames.AddRange(
 			new string[] {
 			}
