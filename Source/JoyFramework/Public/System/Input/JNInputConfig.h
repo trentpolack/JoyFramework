@@ -5,6 +5,8 @@
 #include "GameplayTagContainer.h"
 #include "UObject/UObjectGlobals.h"
 
+#include "PlayerMappableInputConfig.h"
+
 #include "JNInputConfig.generated.h"
 
 // Class Declarations.
@@ -13,7 +15,7 @@ class UObject;
 
 // Struct used to map a input action to a gameplay input tag.
 USTRUCT( BlueprintType )
-struct FJNInputAction
+struct JOYFRAMEWORK_API FJNInputAction
 {
 	GENERATED_BODY( )
 
@@ -27,7 +29,7 @@ public:
 
 // Base character class.
 UCLASS( BlueprintType, Const )
-class UJNInputConfig : public UDataAsset
+class JOYFRAMEWORK_API UJNInputConfig : public UDataAsset
 {
 	GENERATED_BODY( )
 

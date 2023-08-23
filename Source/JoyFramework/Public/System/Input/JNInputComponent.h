@@ -16,8 +16,8 @@
 #include "JNInputComponent.generated.h"
 
 // Game implementation of UE's Enhanced Input Component. Adds additional functionality for natively-defined gameplay tag mappings.
-UCLASS( Config = Input )
-class UJNInputComponent : public UEnhancedInputComponent
+UCLASS( Config = Input, Blueprintable, BlueprintType )
+class JOYFRAMEWORK_API UJNInputComponent : public UEnhancedInputComponent
 {
 	GENERATED_BODY( )
 

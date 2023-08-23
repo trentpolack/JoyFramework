@@ -9,7 +9,7 @@
 #include "JNInventoryComponent.generated.h"
 
 // Base character class.
-UCLASS( BlueprintType, Blueprintable, Config = "Inventory" )
+UCLASS( Config = "Inventory", BlueprintType, Blueprintable )
 class JOYFRAMEWORK_API UJNInventoryComponent : public UActorComponent
 {
 	GENERATED_BODY( )

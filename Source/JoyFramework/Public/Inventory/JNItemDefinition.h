@@ -15,7 +15,7 @@
 
 #include "JNItemDefinition.generated.h"
 
-UCLASS( Blueprintable, BlueprintType, Const, Abstract )
+UCLASS( Abstract, Blueprintable, BlueprintType, Const )
 class JOYFRAMEWORK_API UJNItemDefinition : public UObject
 {
 	GENERATED_BODY( )
