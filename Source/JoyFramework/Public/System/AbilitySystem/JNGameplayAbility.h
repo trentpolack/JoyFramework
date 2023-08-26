@@ -3,11 +3,12 @@
 #include "CoreMinimal.h"
 
 #include "Abilities/GameplayAbility.h"
-#include "AbilitySystemComponent.h"
+
+#include "GameplayAbilitySpec.h"
 
 #include "JNGameplayAbility.generated.h"
 
-// Base character class.
+// Extensions to the UE base Gameplay Ability functionality.
 UCLASS( Abstract, HideCategories = Input )
 class UJNGameplayAbility : public UGameplayAbility
 {
@@ -15,5 +16,4 @@ class UJNGameplayAbility : public UGameplayAbility
 
 public:
 	UJNGameplayAbility( const FObjectInitializer& ObjectInitializer );
-
 };

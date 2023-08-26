@@ -11,11 +11,9 @@
 #include "EnhancedInputComponent.h"
 #include "InputTriggers.h"
 
-#include "JNInputConfig.h"
-
 #include "JNInputComponent.generated.h"
 
-// Game implementation of UE's Enhanced Input Component. Adds additional functionality for natively-defined gameplay tag mappings.
+// Native layer for UE's Enhanced Input Component. It had more functionality in it at one point.
 UCLASS( Config = Input, Blueprintable, BlueprintType )
 class JOYFRAMEWORK_API UJNInputComponent : public UEnhancedInputComponent
 {
@@ -25,11 +23,4 @@ public:
 	UJNInputComponent( const FObjectInitializer& ObjectInitializer );
 
 public:
-	template< class UserClass, typename FuncType >
-	void BindNativeAction( const UJNInputConfig* InputConfig, const FGameplayTag& InputTag, ETriggerEvent TriggerEvent, UserClass* Object, FuncType Func, bool bLogIfNotFound );
-
-	template< class UserClass, typename PressedFuncType, typename ReleasedFuncType >
-	void BindAbilityActions( const UJNInputConfig* InputConfig, UserClass* Object, PressedFuncType PressedFunc, ReleasedFuncType ReleasedFunc, TArray< uint32 >& BindHandles );
-
-	void RemoveBinds( TArray< uint32 >& BindHandles );
 };

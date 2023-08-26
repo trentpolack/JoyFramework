@@ -11,7 +11,7 @@
 class UAbilitySystemComponent;
 class UJNAbilitySystemComponent;
 
-// Base character class.
+// Native layer between the base UE pawn class.
 UCLASS( Config = Game )
 class JOYFRAMEWORK_API AJNPawn : public APawn, public IAbilitySystemInterface
 {
@@ -35,7 +35,7 @@ public:
 	/**
 	 *	IAbilitySystemInterface Methods.
 	 */
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent( ) const override;
 
 	/**
 	 *	JNPawn Methods.
