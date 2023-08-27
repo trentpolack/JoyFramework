@@ -29,18 +29,9 @@ void AJNPlayerCharacterBase::EndPlay( const EEndPlayReason::Type EndPlayReason )
 	Super::EndPlay( EndPlayReason );
 }
 
-void AJNPlayerCharacterBase::OnAbilityInputTagPressed( FGameplayTag InputTag )
+void AJNPlayerCharacterBase::SetupPlayerInputComponent( UInputComponent* PlayerInputComponent )
 {
-	// TODO (trent, 3/14/23): do.
-	// TODO (trent, 5/14/23): still do? question mark?
-	// TODO (trent, 8/19/23): ... should be clear at this point probably but: still do this?
-}
-
-void AJNPlayerCharacterBase::OnAbilityInputTagReleased( FGameplayTag InputTag )
-{
-	// TODO (trent, 3/14/23): do.
-	// TODO (trent, 5/14/23): still do? question mark?
-	// TODO (trent, 8/19/23): ... should be clear at this point probably but: still do this?
+	Super::SetupPlayerInputComponent( PlayerInputComponent );
 }
 
 void AJNPlayerCharacterBase::Reset( )

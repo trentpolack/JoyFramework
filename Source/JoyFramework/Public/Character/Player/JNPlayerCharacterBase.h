@@ -43,8 +43,11 @@ protected:
 	virtual void BeginPlay( ) override;
 	virtual void EndPlay( const EEndPlayReason::Type EndPlayReason ) override;
 
-	void OnAbilityInputTagPressed( FGameplayTag InputTag );
-	void OnAbilityInputTagReleased( FGameplayTag InputTag );
+	/**
+	 *	APawn Overrides.
+	*/
+	virtual void SetupPlayerInputComponent( UInputComponent* PlayerInputComponent ) override;
+
 
 public:
 	/**

@@ -2,25 +2,26 @@
 
 #include "CoreMinimal.h"
 
+#include "InputAction.h"
+
 #include "JNPlayerCharacterBase.h"
 
 #include "JNPlayerCharacter3P.generated.h"
 
 // Declarations.
-class USkeletalMeshComponent;
 class USceneComponent;
 class UCameraComponent;
-class USpringArmComponent;
-class UAnimMontage;
-class USoundBase;
 
-class UInputComponent;
 class UInputMappingContext;
 class UInputAction;
 
-class UJNInputConfig;
+class UJNSpringArmComponent;
 
-UCLASS( Config = Game )
+/**
+ *	AJNPlayerCharacter3P Class Definition.
+ *		General-purpose template for a 3P character.
+ */
+UCLASS( Config = Game, Blueprintable )
 class JOYFRAMEWORK_API AJNPlayerCharacter3P : public AJNPlayerCharacterBase
 {
 	GENERATED_BODY( )
@@ -30,13 +31,24 @@ public:
 
 protected:
 	/**
-	 *	Visual Properties. 
+	 *	Core Input Properties.
 	 */
-	
+	UPROPERTY( EditAnywhere, BlueprintReadOnly, Category = Input, meta = ( AllowPrivateAccess = "true" ) )
+	UInputMappingContext* InputMappingContext;
+
+	// Basic look/movement functionality.
+	UPROPERTY( EditAnywhere, BlueprintReadOnly, Category = Input, meta = ( AllowPrivateAccess = "true" ) )
+	UInputAction* MoveAction;
+	UPROPERTY( EditAnywhere, BlueprintReadOnly, Category = Input, meta = ( AllowPrivateAccess = "true" ) )
+	UInputAction* LookAction;
+
+	/**
+	 *	Visual Properties.
+	 */
 	UPROPERTY( VisibleAnywhere, BlueprintReadOnly, Category = Camera, Meta = ( AllowPrivateAccess = "true" ) )
-	TObjectPtr< USpringArmComponent > CameraBoom = nullptr;
+	TObjectPtr< UJNSpringArmComponent > CameraBoom;
 	UPROPERTY( VisibleAnywhere, BlueprintReadOnly, Category = Camera, Meta = ( AllowPrivateAccess = "true" ) )
-	TObjectPtr< UCameraComponent > Camera3P = nullptr;
+	TObjectPtr< UCameraComponent > Camera3P;
 
 protected:
 	/**
@@ -45,11 +57,24 @@ protected:
 	virtual void BeginPlay( ) override;
 	virtual void EndPlay( const EEndPlayReason::Type EndPlayReason ) override;
 
+	/**
+	 *	APawn Overrides.
+	*/
+	virtual void SetupPlayerInputComponent( UInputComponent* PlayerInputComponent ) override;
+
 public:
 	/**
 	 *	AJNCharacter Overrides.
 	 */
 	virtual void Reset( ) override;
+
+	/**
+	 *	Input Response.
+	 */
+	UFUNCTION( Category = "Player|Input", BlueprintNativeEvent )
+	void OnMoveAction( const FInputActionValue& Value );
+	UFUNCTION( Category = "Player|Input", BlueprintNativeEvent )
+	void OnLookAction( const FInputActionValue& Value );
 
 	/**
 	 *	Accessors.

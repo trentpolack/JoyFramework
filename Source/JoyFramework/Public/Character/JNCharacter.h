@@ -41,9 +41,18 @@ protected:
 
 public:
 	/**
+	 *	Input Properties.
+	 */
+	UPROPERTY( Category = "Player|Input", EditAnywhere, BlueprintReadWrite )
+	float LookYawModifier = 1.0f;
+	UPROPERTY( Category = "Player|Input", EditAnywhere, BlueprintReadWrite )
+	float LookPitchModifier = 1.0f;
+
+public:
+	/**
 	 *	IAbilitySystemInterface Methods.
 	 */
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent( ) const override;
 
 	/**
 	 *	JNCharacter Methods.
