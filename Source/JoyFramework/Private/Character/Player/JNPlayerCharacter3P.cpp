@@ -116,11 +116,13 @@ void AJNPlayerCharacter3P::OnMoveAction_Implementation( const FInputActionValue&
 		return;
 	}
 
-	{
-		// add movement 
-		AddMovementInput( GetActorForwardVector( ), movementVector.Y );
-		AddMovementInput( GetActorRightVector( ), movementVector.X );
-	}
+	// Get controller rotation.
+	const FRotator rotation = Controller->GetControlRotation( );
+	const FRotator rotationYaw( 0.0f, rotation.Yaw, 0.0f );
+
+	// Add movement.
+	AddMovementInput( FRotationMatrix( rotationYaw ).GetUnitAxis( EAxis::X ), movementVector.Y );
+	AddMovementInput( FRotationMatrix( rotationYaw ).GetUnitAxis( EAxis::Y ), movementVector.X );
 }
 
 void AJNPlayerCharacter3P::OnLookAction_Implementation( const FInputActionValue& Value )
@@ -145,6 +147,6 @@ void AJNPlayerCharacter3P::OnLookAction_Implementation( const FInputActionValue&
 
 	if( lookAxisVector.Y != 0.0f )
 	{
-		AddControllerPitchInput( lookAxisVector.Y*LookPitchModifier*pWorld->GetDeltaSeconds( ) );
+		AddControllerPitchInput( -lookAxisVector.Y*LookPitchModifier*pWorld->GetDeltaSeconds( ) );
 	}
 }

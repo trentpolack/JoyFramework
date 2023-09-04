@@ -44,9 +44,9 @@ public:
 	 *	Input Properties.
 	 */
 	UPROPERTY( Category = "Player|Input", EditAnywhere, BlueprintReadWrite )
-	float LookYawModifier = 1.0f;
+	float LookYawModifier = 10.0f;
 	UPROPERTY( Category = "Player|Input", EditAnywhere, BlueprintReadWrite )
-	float LookPitchModifier = 1.0f;
+	float LookPitchModifier = 10.0f;
 
 public:
 	/**
